@@ -70,6 +70,7 @@ class ChecklistItemDetailDialog extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
+                      key: const Key('detailTitle'),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -123,6 +124,7 @@ class ChecklistItemDetailDialog extends StatelessWidget {
                       ),
                     ),
                     IconButton(
+                      key: const Key('detailCloseButton'),
                       onPressed: () => Navigator.of(context).pop(),
                       icon: const Icon(Icons.close),
                     ),
@@ -233,6 +235,7 @@ class ChecklistItemDetailDialog extends StatelessWidget {
                     SizedBox(
                       width: double.infinity,
                       child: FilledButton.icon(
+                        key: const Key('markCompleteButton'),
                         onPressed: () =>
                             _showCompleteConfirmation(context, item),
                         icon: Icon(
@@ -263,6 +266,7 @@ class ChecklistItemDetailDialog extends StatelessWidget {
                           child: TextButton.icon(
                             onPressed: () =>
                                 _showDeleteConfirmation(context, item),
+                            key: const Key('detailDeleteButton'),
                             icon: const Icon(Icons.delete_outline, size: 20),
                             label: const Text('Delete'),
                             style: TextButton.styleFrom(
@@ -448,12 +452,13 @@ class ChecklistItemDetailDialog extends StatelessWidget {
         content: Text('Mark "${itemToToggle.title}" as completed?'),
         actions: [
           TextButton(
-            onPressed: () => Navigator.of(completeDialogContext).pop(),
+            onPressed: () => context.pop(),
             child: const Text('Cancel'),
           ),
           FilledButton(
+            key: const Key('confirmCompleteButton'),
             onPressed: () {
-              Navigator.of(completeDialogContext).pop();
+              context.pop();
               onToggle();
             },
             style: FilledButton.styleFrom(backgroundColor: AppColors.success),
@@ -481,6 +486,7 @@ class ChecklistItemDetailDialog extends StatelessWidget {
             child: const Text('Cancel'),
           ),
           TextButton(
+            key: const Key('confirmDeleteButton'),
             onPressed: () {
               context.pop();
               onDelete();
