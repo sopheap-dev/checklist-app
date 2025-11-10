@@ -5,10 +5,7 @@ import 'package:checklist_app/app/config/di/di.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Future.wait<void>([
-    (() async => setupDependencies())(),
-    (() async => getIt.allReady())(),
-  ]);
+  await setupDependencies();
 
   runApp(const CheckListApp());
 }
