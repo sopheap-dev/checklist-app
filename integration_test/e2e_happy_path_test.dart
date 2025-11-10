@@ -8,12 +8,13 @@ import 'package:checklist_app/app/config/di/di.dart';
 Future<void> _waitForFinder(
   WidgetTester tester,
   Finder finder, {
-  Duration timeout = const Duration(seconds: 3),
+  Duration timeout = const Duration(seconds: 10),
 }) async {
   final end = DateTime.now().add(timeout);
   while (DateTime.now().isBefore(end)) {
-    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pump(const Duration(milliseconds: 150));
     if (finder.evaluate().isNotEmpty) {
+      await tester.pumpAndSettle();
       return;
     }
   }

@@ -1,5 +1,5 @@
 name: checklist_app
-description: "Cam CheckList app is an app for manage todo list and show data in dashboard for overview."
+description: "Cam CheckList application is for managing todo items with priority settings, filtering, sorting, and a comprehensive dashboard with visual analytics."
 publish_to: "none"
 version: 0.1.0
 
