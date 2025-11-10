@@ -247,6 +247,14 @@ class ChecklistCubit extends Cubit<ChecklistState> {
     }
   }
 
+  int getCompletionRate() {
+    final stats = getStatistics();
+    final total = stats['total'] ?? 0;
+    if (total == 0) return 0;
+    final completed = stats['completed'] ?? 0;
+    return ((completed / total) * 100).round();
+  }
+
   void _updateItems(List<ChecklistItemModel> items) {
     final filter = _buildFilter();
     final filteredItems = ChecklistRepositoryImpl.applyFilter(items, filter);
