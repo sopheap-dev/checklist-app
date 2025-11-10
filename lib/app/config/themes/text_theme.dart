@@ -8,8 +8,9 @@ const FontWeight semiBold = FontWeight.w600;
 class AppTextTheme {
   static TextTheme getKhmerTextTheme({required bool isDarkMode}) {
     final textColor = isDarkMode ? AppColors.darkText : AppColors.text;
-    final bodySmallColor =
-        isDarkMode ? AppColors.darkSurfaceText : AppColors.text;
+    final bodySmallColor = isDarkMode
+        ? AppColors.darkSurfaceText
+        : AppColors.text;
 
     return TextTheme(
       displaySmall: TextStyle(
@@ -53,11 +54,7 @@ class AppTextTheme {
         color: textColor,
         letterSpacing: 0,
       ),
-      bodyLarge: TextStyle(
-        fontSize: 14,
-        fontWeight: regular,
-        color: textColor,
-      ),
+      bodyLarge: TextStyle(fontSize: 14, fontWeight: regular, color: textColor),
       bodyMedium: TextStyle(
         fontSize: 12,
         fontWeight: regular,
@@ -73,8 +70,9 @@ class AppTextTheme {
 
   static TextTheme getEnglishTextTheme({required bool isDarkMode}) {
     final textColor = isDarkMode ? AppColors.darkText : AppColors.text;
-    final bodySmallColor =
-        isDarkMode ? AppColors.darkSurfaceText : AppColors.text;
+    final bodySmallColor = isDarkMode
+        ? AppColors.darkSurfaceText
+        : AppColors.text;
 
     return TextTheme(
       displaySmall: TextStyle(
@@ -118,11 +116,7 @@ class AppTextTheme {
         color: textColor,
         letterSpacing: 0,
       ),
-      bodyLarge: TextStyle(
-        fontSize: 14,
-        fontWeight: regular,
-        color: textColor,
-      ),
+      bodyLarge: TextStyle(fontSize: 14, fontWeight: regular, color: textColor),
       bodyMedium: TextStyle(
         fontSize: 12,
         fontWeight: regular,
