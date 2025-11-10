@@ -225,6 +225,7 @@ class _AddEditChecklistDialogState extends State<AddEditChecklistDialog> {
                       ),
                       const SizedBox(width: 8),
                       FilledButton.icon(
+                        key: const Key('addEditSubmitButton'),
                         onPressed: _saveItem,
                         icon: Icon(isEdit ? Icons.save : Icons.add),
                         label: Text(isEdit ? 'Save' : 'Add'),
